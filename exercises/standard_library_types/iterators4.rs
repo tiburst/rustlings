@@ -1,9 +1,10 @@
 // iterators4.rs
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+use std::iter::successors;
 
 pub fn factorial(num: u64) -> u64 {
+    successors(Some(1_u64), |i| { if *i < num { Some(i + 1) } else { None } }).product()
     // Complete this function to return the factorial of num
     // Do not use:
     // - return
